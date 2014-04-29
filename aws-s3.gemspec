@@ -1,4 +1,5 @@
-require "lib/aws/s3/version"
+$:.push File.expand_path("../lib", __FILE__)
+require_relative "./lib/aws/s3/version"
 
 Gem::Specification.new do |s|
     s.name              = 'aws-s3'
@@ -11,7 +12,7 @@ Gem::Specification.new do |s|
     s.extra_rdoc_files  = %w(README COPYING INSTALL)
     s.homepage          = 'http://amazon.rubyforge.org'
     s.rubyforge_project = 'amazon'
-    s.files             = FileList['Rakefile', 'lib/**/*.rb', 'bin/*', 'support/**/*.rb']
+    s.files             = Dir['Rakefile', 'lib/**/*.rb', 'bin/*', 'support/**/*.rb']
     s.executables       << 's3sh'
     s.test_files        = Dir['test/**/*']
     
